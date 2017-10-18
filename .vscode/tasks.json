@@ -1,0 +1,31 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "taskName": "Build",
+            "type": "shell",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "command": "g++",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "args": [
+                "-g",
+                "-std=c++11",
+                "./GLFWOpenGL/main.cpp",
+                "./GLFWOpenGL/display.cpp",
+                "-o",
+                "Builds/Mac_Build/engine",
+                "-L/usr/local/lib",
+                "-lGLEW",
+                "-lSDL2",
+                "-framework\  OpenGL"
+            ]
+        }
+    ]
+}
